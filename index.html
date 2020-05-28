@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Hawai</h1>
+    <script>
+      let osoba1 = {
+        jmeno: "Lara",
+        uspory: 55000,
+      };
+      let osoba2 = {
+        jmeno: "Zara",
+        uspory: 10000,
+      };
+      let usporyCelkem = osoba1.uspory + osoba2.uspory;
+
+      const mameCiNemameDost = () => {
+        if (
+          usporyCelkem >= 100000 &&
+          osoba1.uspory >= 50000 &&
+          osoba2.uspory >= 50000
+        ) {
+          return "Jupí, můžeme jet na Hawaiiiiii, obě jsme naspořily 50 000 kč či víc!!!";
+        } else if (usporyCelkem >= 100000 && osoba1.uspory <= 49999) {
+          return (
+            " Juchů, jet můžeme, ale " +
+            osoba1.jmeno +
+            " bude dlužit Zaře " +
+            (50000 - osoba1.uspory) +
+            " kč "
+          );
+        } else if (usporyCelkem >= 100000 && osoba2.uspory <= 49999) {
+          return (
+            " Juchů, jet můžeme, ale " +
+            osoba2.jmeno +
+            " bude dlužit Laře " +
+            (50000 - osoba2.uspory) +
+            " kč "
+          );
+        }
+        if (
+          usporyCelkem <= 100000 &&
+          osoba1.uspory <= 49999 &&
+          osoba2.uspory <= 49999
+        ) {
+          return (
+            " Bohužel se nikam nepojede, ani jedna jste si nenašetřila dost... Celkově vám chybí " +
+            (100000 - usporyCelkem) +
+            " kč. Takže Laro, ty mušíš do prasátka naházet ještě " +
+            (50000 - osoba1.uspory) +
+            " kč a ty Zaro vydělěj alespoň " +
+            (50000 - osoba2.uspory) +
+            " kč, jinak se na Hawai nikdy nepodíváte!!! "
+          );
+        } else if (usporyCelkem <= 100000 && osoba1.uspory >= 50000) {
+          return (
+            " Kvůli Zaře se nikam nejede, i kdyby si půjčila od Lary " +
+            (osoba1.uspory - 50000) +
+            " kč, pořád bude chybět " +
+            (100000 - usporyCelkem) +
+            " kč. "
+          );
+        } else if (usporyCelkem <= 100000 && osoba2.uspory >= 50000) {
+          return (
+            "Kvůli Laře se nikam nejede, i kdyby si půjčila od Zary " +
+            (osoba2.uspory - 50000) +
+            " kč, pořád bude chybět " +
+            (100000 - usporyCelkem) +
+            " kč. "
+          );
+        }
+      };
+    </script>
+  </body>
+</html>
